@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.dao.DataAccessResourceFailureException
 import reactor.test.StepVerifier
 import javax.validation.ConstraintViolation
 import javax.validation.Validation.buildDefaultValidatorFactory
@@ -107,14 +106,14 @@ internal class StudentServiceTest(@Autowired val service: StudentService) {
                 val saved = service.save(student)
 
                 // if db running
-                /*StepVerifier.create(saved.log())
+                StepVerifier.create(saved.log())
                         .thenConsumeWhile { it.firstName == "Kenda" }
-                        .verifyComplete()*/
+                        .verifyComplete()
 
                 // If db not running
-                StepVerifier.create(saved.log())
+                /*StepVerifier.create(saved.log())
                         .expectError(DataAccessResourceFailureException::class.java)
-                        .verify()
+                        .verify()*/
             }
         }
     }

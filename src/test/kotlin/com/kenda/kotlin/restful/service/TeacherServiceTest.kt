@@ -10,6 +10,7 @@ import javax.validation.ValidatorFactory
 @DisplayName("Teacher Service Test")
 @SpringBootTest
 @Tag("integration-test")
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 internal class TeacherServiceTest(@Autowired val service: TeacherService) {
 
     private var validatorFactory: ValidatorFactory? = null
