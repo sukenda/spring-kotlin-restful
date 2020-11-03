@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-kotlin-restful
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      spring: spring-kotlin-restful
+  template:
+    metadata:
+      labels:
+        spring: spring-kotlin-restful
+    spec:
+      containers:
+        - name: spring-kotlin-restful
+          image: spring-kotlin-restful
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MONGO_HOST
+              value: mongodb
+            - name: MONGO_PORT
+              value: '27017'
+            - name: MONGO_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  key: mongodb-database
+                  name: mongodb
+            - name: MONGO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: mongodb-username
+                  name: mongodb
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: mongodb-password
+                  name: mongodb
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-kotlin-restful
+  labels:
+    app: spring-kotlin-restful
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    spring: spring-kotlin-restful
+  type: LoadBalancer

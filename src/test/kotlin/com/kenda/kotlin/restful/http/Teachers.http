@@ -1,0 +1,36 @@
+POST http://localhost:8080/teachers
+Content-Type: application/json
+
+{
+  "firstName": "Kenda",
+  "lastName": "Sukenda",
+  "fullName": "Kenda sukenda"
+}
+
+###
+POST http://192.168.64.8:32134/teachers
+Content-Type: application/json
+
+{
+  "firstName": "Kenda",
+  "lastName": "Sukendda",
+  "fullName": "Kenda sukendda"
+}
+
+###
+PUT http://localhost:8080/teachers/e12ece6b-6a1b-4d38-a4b7-618e0ed7f71a
+Content-Type: application/json
+
+{
+"firstName": "Budi",
+"lastName": "Ibu Budi",
+"fullName": "Ini ibu budi"
+}
+
+###
+GET http://localhost:8080/teachers/9fa500a7-070b-4b95-932d-4cee26b052fd
+Accept: application/json
+
+###
+GET http://localhost:8080/teachers?page=0&size=10
+Accept: application/json

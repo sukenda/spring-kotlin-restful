@@ -1,0 +1,13 @@
+### Build ###
+target/
+
+### IntelliJ IDEA ###
+.idea
+.mvn
+*.iws
+*.iml
+*.ipr
+
+###
+docker-compose/mongodb
+logs

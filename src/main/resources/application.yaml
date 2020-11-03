@@ -1,0 +1,48 @@
+spring:
+  profiles:
+    active: @profileActive@
+
+---
+spring:
+  profiles: local
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      database: 'spring-kotlin-restful'
+      username: 'spring-kotlin-user'
+      password: 'spring-kotlin-pass'
+
+---
+spring:
+  profiles: docker
+  data:
+    mongodb:
+      port: 27017
+      host: mongodb
+      database: 'spring-kotlin-restful'
+      username: 'spring-kotlin-user'
+      password: 'spring-kotlin-pass'
+
+---
+spring:
+  profiles: integration-test
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      database: 'spring-kotlin-restful'
+      username: 'spring-kotlin-user'
+      password: 'spring-kotlin-pass'
+
+---
+spring:
+  profiles: kubernetes
+  data:
+    mongodb:
+      database: ${MONGO_DATABASE}
+      username: ${MONGO_USERNAME}
+      password: ${MONGO_PASSWORD}
+      host: ${MONGO_HOST}
+      port: ${MONGO_PORT}
+
