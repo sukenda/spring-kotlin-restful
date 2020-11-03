@@ -19,7 +19,7 @@ spring:
   data:
     mongodb:
       port: 27017
-      host: mongodb
+      host: mongodb  # Docker container name
       database: 'spring-kotlin-restful'
       username: 'spring-kotlin-user'
       password: 'spring-kotlin-pass'
