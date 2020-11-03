@@ -41,8 +41,6 @@ docker-compose -f docker-compose/mongodb-compose.yaml up -d
 
 * Open `localhost:8081` to se mongo-express using default user password `admin:admin`
 
-![Mongo Express](/images/mongo-express.png)
-
 * Run project using maven (skip test and using local profile) `Ctrl + C` for close running project
 
 ```
@@ -87,8 +85,6 @@ docker-compose -f docker-compose/sonar-compose.yaml up -d
 ```
 mvn clean verify sonar:sonar
 ```
-![Sonarqube](/images/sonarqube.png)
-
 ## API Spec
 
 ## Contributions
@@ -102,11 +98,9 @@ mvn clean verify sonar:sonar
 - `minikube service spring-kotlin-restful` - opens my service url which is configured as type `LoadBalancer`
 
 ## Mongodb
-- kubectl exec -it <POD> /bin/bash
-- mongo
-- mongo -u spring-kotlin-user -p --authenticationDatabase spring-kotlin-restful
-- mongo -u spring-kotlin-user -p --authenticationDatabase admin
-- mongo -u sukenda -p --authenticationDatabase sukenda
+- `kubectl exec -it <POD> /bin/bash`
+- `mongo`
+- `mongo -u spring-kotlin-user -p --authenticationDatabase spring-kotlin-restful`
 
 ## SSH Github
 * Generate ssh-keygen
