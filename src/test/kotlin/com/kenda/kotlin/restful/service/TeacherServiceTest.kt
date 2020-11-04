@@ -3,13 +3,14 @@ package com.kenda.kotlin.restful.service
 import org.junit.jupiter.api.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ActiveProfiles
 import javax.validation.Validation
 import javax.validation.Validator
 import javax.validation.ValidatorFactory
 
 @DisplayName("Teacher Service Test")
 @SpringBootTest
-@Tag("integration-test")
+@ActiveProfiles("integration-test")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 internal class TeacherServiceTest(@Autowired val service: TeacherService) {
 

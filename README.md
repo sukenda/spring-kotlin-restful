@@ -83,7 +83,7 @@ docker-compose -f docker-compose/sonar-compose.yaml up -d
 * Open `localhost:9000` to see if sonarqube running
 * Run inspect code using common
 ```
-mvn clean verify sonar:sonar
+mvn verify sonar:sonar
 ```
 ## API Spec
 

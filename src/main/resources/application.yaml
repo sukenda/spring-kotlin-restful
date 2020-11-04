@@ -29,11 +29,8 @@ spring:
   profiles: integration-test
   data:
     mongodb:
-      port: 27017
-      host: localhost
       database: 'spring-kotlin-restful'
-      username: 'spring-kotlin-user'
-      password: 'spring-kotlin-pass'
+      uri: mongodb+srv://spring:3K8DjsJVQaENF46a@kubernetes-node.dpopz.mongodb.net/spring-kotlin-restful?retryWrites=true&w=majority
 
 ---
 spring:
