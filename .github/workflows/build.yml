@@ -18,10 +18,10 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
       - name: MongoDB using Docker Compose
-        run: docker-compose -f docker-compose.yml -f docker-compose/mongodb-compose.yaml up -d
+        run: docker-compose -f docker-compose/mongodb-compose.yaml up -d
 
       - name: Sonarqube using Docker Compose
-        run: docker-compose -f docker-compose.yml -f docker-compose/sonar-compose.yaml up -d
+        run: docker-compose -f docker-compose/sonar-compose.yaml up -d
 
       - name: Check RUN Docker Container
         run: docker ps -a
