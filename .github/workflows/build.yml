@@ -21,10 +21,11 @@ jobs:
         uses: sukenda/mongodb-action@v1.0
         with:
           version: '4.2'
-          port: 27017
           username: 'root'
           password: 'Pas@123'
-          database: 'spring-kotlin-restful'
+          initdb: 'spring-kotlin-restful'
+          initusername: 'spring-kotlin-user'
+          initpassword: 'spring-kotlin-pass'
 
 #      - name: Run Sonarqube
 #        uses: sukenda/sonarqube-action@v1.0
