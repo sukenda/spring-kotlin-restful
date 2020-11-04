@@ -65,24 +65,23 @@ internal class TeacherControllerTest(@Autowired val client: WebTestClient) {
 
     @Test
     fun `Update Teacher`() {
-        val teacher = CreateTeacher(firstName = "Dari budi Kenda", lastName = "Dari budi Sukenda", fullName = "Dari budi Kenda sukenda")
-        client.put().uri("/teachers/{id}", "teacherId")
+        val teacher = CreateTeacher(firstName = "Kenda Edit", lastName = "Dari budi Sukenda", fullName = "Dari budi Kenda sukenda")
+        client.put().uri("/teachers/{id}", "8b4d17ed-1f0e-43f5-9681-caf1763080e5")
                 .bodyValue(teacher)
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
                 .expectStatus().isOk
                 .expectBody()
-                /*.jsonPath("$.data.firstName").isEqualTo("Dari budi Kenda")*/
+                .jsonPath("$.data.firstName").isEqualTo("Kenda Edit")
     }
 
     @Test
     fun `Find Teacher By ID`() {
-        client.get().uri("/teachers/{id}", "teacherId")
+        client.get().uri("/teachers/{id}", "8b4d17ed-1f0e-43f5-9681-caf1763080e5")
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
                 .expectStatus().isOk
                 .expectBody()
-                /*.jsonPath("$.data.firstName").isEqualTo("Dari budi Kenda")*/
     }
 
     @Test
