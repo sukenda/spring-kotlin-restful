@@ -9,7 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
 import org.springframework.test.web.reactive.server.WebTestClient
 
-@SpringBootTest
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient
 internal class StudentControllerTest(@Autowired val client: WebTestClient) {
 
@@ -69,7 +70,7 @@ internal class StudentControllerTest(@Autowired val client: WebTestClient) {
                 .exchange()
                 .expectStatus().isOk
                 .expectBody()
-                /*.jsonPath("$.data.firstName").isEqualTo("Dari budi Kenda")*/
+        /*.jsonPath("$.data.firstName").isEqualTo("Dari budi Kenda")*/
     }
 
     @Test
@@ -79,7 +80,7 @@ internal class StudentControllerTest(@Autowired val client: WebTestClient) {
                 .exchange()
                 .expectStatus().isOk
                 .expectBody()
-                /*.jsonPath("$.data.firstName").isEqualTo("Dari budi Kenda")*/
+        /*.jsonPath("$.data.firstName").isEqualTo("Dari budi Kenda")*/
     }
 
     @Test

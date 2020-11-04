@@ -13,8 +13,8 @@ import javax.validation.Validator
 import javax.validation.ValidatorFactory
 
 
-@DisplayName("Student Service Test")
 @SpringBootTest
+@DisplayName("Student Service Test")
 @Tag("integration-test")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 internal class StudentServiceTest(@Autowired val service: StudentService) {
