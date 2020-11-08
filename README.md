@@ -142,7 +142,7 @@ This common used when learning spring boot kotlin
 - `mongo`
 - `mongo -u spring-kotlin-user -p --authenticationDatabase spring-kotlin-restful`
 
-## SSH Github
+## SSH Github with multiple account
 * Generate ssh-keygen
 ```
 ssh-keygen -t rsa -C "youremail@gmail.com" -f "github-youremail"
@@ -165,6 +165,7 @@ pbcopy < ~/.ssh/github-youremail.pub
 ```
 pbcopy < ~/.ssh/github-otheremail.pub
 ```
+* See [Github SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
 
 * Edit config
 ```
