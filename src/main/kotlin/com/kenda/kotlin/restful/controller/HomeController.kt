@@ -1,7 +1,5 @@
 package com.kenda.kotlin.restful.controller
 
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -12,7 +10,7 @@ class HomeController {
 
     @GetMapping
     fun home(): String {
-        return "Hello, I`am Running"
+        return "Hello, I`am Running and Live"
     }
 
 }

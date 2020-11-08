@@ -73,10 +73,55 @@ mvn compile jib:build
 ```
 
 ## Kubernetes using skaffold
+Before you can develop application on kubernetes using skaffold you must have `minikube` on local, to install `minikube` on local you can see [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+* Start minikube using
+```
+minikube start
+```
+* Open minikube dashboard using
+```
+minikube dashboard
+```
+* Make sure you have `Skaffold` install on local or you can see [Skaffold](https://skaffold.dev/docs/quickstart/)
+```
+skaffold version
+```
+* Build image using `skaffold.yml` file using
+```
+skaffold build
+```
+* Build image and deploy to kubernetes using
+```
+skaffold run
+```
+* See pods using 
+```
+kubectl get pods
+```
+or 
+```
+kubectl get all
+```
+* Available common on kubernetes see [Kubernetes](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+* Open application running using
+```
+minikube service spring-kotlin-restful
+```
+* Delete deployment and service using
+```
+kubectl delete deployment spring-kotlin-restful
+```
+```
+kubectl delete service spring-kotlin-restful
+```
+* If you want to build and deploy when your code changes use this common
+```
+skaffold dev
+```
 
 ## Code Inspection using Sonarqube
 Before you can inspect code make sure you run sonarqube server using docker compose
-* Run this common for run sonarqube using docker compose
+* Run this common for running sonarqube using docker compose
 ```
 docker-compose -f docker-compose/sonar-compose.yaml up -d
 ```
@@ -90,12 +135,7 @@ mvn verify sonar:sonar
 ## Contributions
 
 ## Appendix
-- `skaffold.yml` is used by the Skaffold CLI
-- `k8s-app-deployment.yml` are used for deployment into the K8s cluster and they are integrated into the `skaffold.yml` for continuous deployment
-- `skaffold build` is used for building docker images from `skaffold.yml`
-- `skaffold run` is used for building and deploying docker images on to a Kubernetes cluster
-- `skaffold dev` is used to watch for files and trigger build and deployment based on that
-- `minikube service spring-kotlin-restful` - opens my service url which is configured as type `LoadBalancer`
+This common used when learning spring boot kotlin
 
 ## Mongodb
 - `kubectl exec -it <POD> /bin/bash`
@@ -105,25 +145,25 @@ mvn verify sonar:sonar
 ## SSH Github
 * Generate ssh-keygen
 ```
-ssh-keygen -t rsa -C "soekenda09@gmail.com" -f "github-sukenda"
+ssh-keygen -t rsa -C "youremail@gmail.com" -f "github-youremail"
 ```
 ```
-ssh-keygen -t rsa -C "sukenda09@gmail.com" -f "github-sukendakenda"
+ssh-keygen -t rsa -C "otheremail@gmail.com" -f "github-otheremail"
 ```
 * Add ssh-keygen
 ```
-ssh-add -K ~/.ssh/github-sukenda
+ssh-add -K ~/.ssh/github-youremail
 ```
 ```
-ssh-add -K ~/.ssh/github-sukendakenda
+ssh-add -K ~/.ssh/github-otheremail
 ```
 
 * Copy public key
 ```
-pbcopy < ~/.ssh/github-sukenda.pub
+pbcopy < ~/.ssh/github-youremail.pub
 ```
 ```
-pbcopy < ~/.ssh/github-sukendakenda.pub
+pbcopy < ~/.ssh/github-otheremail.pub
 ```
 
 * Edit config
@@ -133,30 +173,30 @@ vi ~/.ssh/config
 
 * Config File
 ```
-Host github.com-sukenda
+Host github.com-youremail
      HostName github.com
      User git
-     IdentityFile ~/.ssh/github-sukenda
+     IdentityFile ~/.ssh/github-youremail
      
- Host github.com-sukendakenda
+ Host github.com-otheremail
      HostName github.com
      User git
-     IdentityFile ~/.ssh/github-sukendakenda
+     IdentityFile ~/.ssh/github-otheremail
 ```
 
 ## Default github account
 ```
-git config --global user.name "sukenda"
+git config --global user.name "username"
 ```
 ```
-git config --global user.email "soekenda09@gmail.com"
+git config --global user.email "youremail@gmail.com"
 ```
 
 ```
-git config --global user.name "sukendakenda"
+git config --global user.name "otherusername"
 ```
 ```
-git config --global user.email "sukenda09@gmail.com"
+git config --global user.email "otheremail@gmail.com"
 ```
 ## Clone repo using specific account
 ```
