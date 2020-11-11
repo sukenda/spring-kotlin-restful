@@ -6,7 +6,6 @@ import com.kenda.kotlin.restful.model.StudentResponse
 import com.kenda.kotlin.restful.service.StudentService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
-import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @RestController
@@ -50,8 +49,16 @@ class StudentController(val studentService: StudentService) {
     }
 
     @GetMapping
-    fun find(@RequestParam("page") page: Int, @RequestParam("size") size: Int): Flux<StudentResponse> {
+    fun find(@RequestParam("page") page: Int, @RequestParam("size") size: Int): Mono<ApiResponse<List<StudentResponse>>> {
         return studentService.find(page, size)
+                .collectList()
+                .flatMap { students ->
+                    Mono.just(ApiResponse(
+                            status = "Data berhasil diupdate",
+                            code = HttpStatus.OK.value(),
+                            data = students
+                    ))
+                }
     }
 
 }

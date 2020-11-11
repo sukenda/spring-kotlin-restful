@@ -15,6 +15,7 @@
 ## About The Project
 Spring kotlin restful is project for explore Spring Boot, Kotlin, Docker, Kubernetes, Sonarqube etc
 
+![Colored](images/spring-boot.png)
 ### Built With
 * [Spring Boot](https://start.spring.io/)
 * [Kotlin](https://kotlinlang.org/)
@@ -40,7 +41,7 @@ docker-compose -f docker-compose/mongodb-compose.yaml up -d
 ```
 
 * Open `localhost:8081` to se mongo-express using default user password `admin:admin`
-
+![Colored](images/mongo-express.png)
 * Run project using maven (skip test and using local profile) `Ctrl + C` for close running project
 
 ```
@@ -73,6 +74,7 @@ mvn compile jib:build
 ```
 
 ## Kubernetes using skaffold
+![Colored](images/kubernetes.png)
 Before you can develop application on kubernetes using skaffold you must have `minikube` on local, to install `minikube` on local you can see [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 * Start minikube using
 ```
@@ -130,6 +132,8 @@ docker-compose -f docker-compose/sonar-compose.yaml up -d
 ```
 mvn verify sonar:sonar
 ```
+![Colored](images/sonarqube.png)
+
 ## API Spec
 
 ## Contributions
