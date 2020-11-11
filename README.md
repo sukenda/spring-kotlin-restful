@@ -1,7 +1,6 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Maven](#maven)
   * [Docker](#docker)
@@ -16,16 +15,6 @@
 Spring kotlin restful is project for explore Spring Boot, Kotlin, Docker, Kubernetes, Sonarqube etc
 
 ![Colored](images/spring-boot.png)
-### Built With
-* [Spring Boot](https://start.spring.io/)
-* [Kotlin](https://kotlinlang.org/)
-* [MongoDB](https://www.mongodb.com/)
-* [Sonarqube](https://www.sonarqube.org/)
-* [JaCoCo](https://www.jacoco.org/)
-* [Docker](https://www.docker.com/)
-* [Jib](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin)
-* [Kubernetes](https://kubernetes.io/)
-* [Skaffold](https://skaffold.dev/docs/install/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
